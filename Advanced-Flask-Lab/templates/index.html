@@ -15,7 +15,7 @@
 					<header id="header">
 						<span class="avatar"><img src="{{url_for('static',filename='images/avatar.jpg')}}" alt="" /></span>
 
-            <h1>Description</h1>
+            <h1> {{user_bio}} </h1>
             <br>
             <!-- About me button -->
             <a href="#"><button style="color:white;width:40%" >More about me</button></a>
@@ -38,21 +38,45 @@
                 
                 <div>
                       <a href="">
-                        <img src="static/images/thumbs/01.jpg" alt="" />
+                        <img src="{{image_link}}" />
+
+
+
                         <h3>Caption... blah blah blah</h3>
                       </a>
                 
                       <a href="">
-                        <img src="url_for('static',filename='images/thumbs/02.jpg')" alt="" />
+                        <img src="{{url_for('static',filename='images/thumbs/02.jpg')}}" alt="" />
                         <h3>Caption... blah blah blah</h3>
                       </a>
                 </div>    
                 <div>
                   <a href="">
+
                         <img src="{{url_for('static',filename='images/thumbs/03.jpg')}}" alt="" />
+
                         <h3>Caption... blah blah blah</h3>
                       </a>
                 </div>  
+
+                <ul>
+
+                {%for post in posts%}
+                 <div>
+                  <a href="">
+
+                        <img src="{{post}}" />
+
+                        
+                      </a>
+                      <li>{{posts[post]}}</li>
+        						
+                </div>  
+                
+                {% endfor %}
+
+
+              </ul>
 
 							</section>
 

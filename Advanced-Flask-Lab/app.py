@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request, render_template, url_for
+from    flask import Flask, jsonify, request, render_template, url_for
 import random
 import requests, json
 
@@ -18,14 +18,13 @@ posts = {
     "https://media-exp1.licdn.com/dms/image/C4D1BAQFTbpgMk3KTSg/company-background_10000/0/1614595305396?e=1659178800&v=beta&t=OiSIvxsPJiJkArJIzBCKVF0_-yEta9gv1qLVnViU8bo": "MEET graduation!",
     "https://pbs.twimg.com/media/FPvsO6xVkAEcrBm?format=jpg&name=900x900": "#Throwback to one of our favorite #MEETsummer events: #BowlingNight!",
     "https://pbs.twimg.com/media/FI_UkcnVIAAUvWN?format=jpg&name=medium": "2020 cohort in their Y1 summer!"}
-
-
+    
 #####
 
 
 @app.route('/')  # '/' for the default page
 def home():
-    return render_template('index.html')
+    return render_template('index.html',image_link= image_link,user_bio=user_bio,posts=posts)
 
 
 @app.route('/about')  # '/' for the default page
